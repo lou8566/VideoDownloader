@@ -7,9 +7,9 @@ namespace VideoDownloader.con.Downloader
     {
         public void Download(string url)
         {
-            var VedioUrl = url;
+            var videoUri = url;
             var youTube = YouTube.Default;
-            var video = youTube.GetVideo(VedioUrl);
+            var video = youTube.GetVideo(videoUri);
             var path = "/youtube/" + video.FullName;
             Console.WriteLine("Downloading...");
             System.IO.File.WriteAllBytes(path, video.GetBytes());
